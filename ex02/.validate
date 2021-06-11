@@ -1,0 +1,13 @@
+validate "Does the directory 'workspace' exists?" "[ -d workspace ]"
+validate "Does 'empty' exists?" "[ -f workspace/empty ]"
+validate "Is 'empty' actually empty?" "[ -f workspace/empty ] && [ ! `cat -e workspace/empty 2> /dev/null` ]"
+validate "Does 'day.idk' exists?" "[ -f workspace/day.idk ]"
+validate "Is 'day.idk' valid?" '[ "`cat -e workspace/day.idk`" == "what a day!$" ]'
+validate "Does the directory 'hello' exists?" '[ -d workspace/hello ]'
+validate "Is 'cp.txt' valid?" '[ "`cat workspace/hello/cp.txt`" == "`man cp`" ]'
+validate "Is 'mv.txt' valid?" '[ "`cat workspace/hello/mv.txt`" == "`man mv`" ]'
+validate "Does 'copy_of_cp.txt' exists?" '[ -f workspace/copy_of_cp.txt ]'
+
+man cp > /tmp/copy_of_cp
+man mv >> /tmp/copy_of_cp
+validate "Is 'copy_of_cp.txt' valid?" '[ "`cat workspace/copy_of_cp.txt`" == "`cat /tmp/copy_of_cp`" ]'

@@ -1,0 +1,2 @@
+validate "Which command to use?" "has_content 'command.txt' 'yes'"
+validate "Has completed the what_is_love program?" "[ -f '.success' ]"

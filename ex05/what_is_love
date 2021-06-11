@@ -1,0 +1,12 @@
+#!/bin/sh
+
+i=0
+while [ $i -lt 42 ]; do
+    echo "What is love ?"
+    read BABY
+    if [ "$BABY" != "Baby don't hurt me, no more" ]; then
+        exit 1
+    fi
+    i=$((i+1))
+done
+touch .success

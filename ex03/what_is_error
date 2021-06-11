@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "Hello"
+echo "There"
+echo "Am" >> /dev/stderr
+echo "I" >> /dev/stderr
+echo "an"
+echo "error"
+echo "?"
+echo "Nobody" >> /dev/stderr
+echo "knows"
+echo "..." >> /dev/stderr
+echo "But"
+echo "I"
+echo "do"

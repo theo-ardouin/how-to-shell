@@ -1,0 +1,3 @@
+validate "Does the directory 'wow' exists?" "[ -d 'wow' ]"
+validate "Do the directories 'i/am/a/very/long/procession/of/multiple/directories' exist?" "[ -d 'i/am/a/very/long/procession/of/multiple/directories/' ]"
+validate "Does the directory '!hello' exists?" "[ -d '!hello' ]"

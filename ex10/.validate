@@ -1,0 +1,31 @@
+cleanup() {
+    rm -f bundle.tar
+}
+
+cleanup
+validate "Can build 'bundle.tar'?" "make bundle.tar && [ -f bundle.tar ]"
+
+cleanup
+validate "Is 'bundle.tar' valid?" "make bundle.tar && mkdir -p /tmp/ex10 && tar -xf bundle.tar -C /tmp/ex10 && cmp -s hello.json /tmp/ex10/hello.json && cmp -s hi.txt /tmp/ex10/hi.txt && [ `find /tmp/ex10 -type f | wc -l` == 2 ]"
+
+cleanup
+validate "Can use rule 'all'?" "make && [ -f bundle.tar ]"
+
+touch bundle.tar
+validate "Can use rule 'clean'?" "make clean && [ ! -f bundle.tar ]"
+
+cleanup
+validate "Can use rule 'clean' if nothing was built?" "make clean"
+
+touch clean
+touch bundle.tar
+validate "Can use rule 'clean' if file exists?" "make clean && [ ! -f bundle.tar ]"
+rm -f clean
+
+cleanup
+validate "Can use rule 're'?" "make re && [ -f bundle.tar ]"
+
+cleanup
+touch bundle.tar
+validate "Does rule 're' rebuild?" 'make re && [ "`cat bundle.tar`" ]'
+cleanup

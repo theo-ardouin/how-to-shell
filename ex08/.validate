@@ -1,0 +1,2 @@
+validate "Is output.txt correct?" "is_hash 'output.txt' 'a7c27b829941f78a0f496923d83da068'"
+validate "What is the number of occurences for the word 'human'?" "has_content 'human.txt' '3'"

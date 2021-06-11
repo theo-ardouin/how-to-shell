@@ -1,0 +1,2 @@
+validate "Was it a good boy?" "has_content 'good_boy.txt' 'yes'"
+validate "What's the script return value?" "has_content 'value.txt' '3'"

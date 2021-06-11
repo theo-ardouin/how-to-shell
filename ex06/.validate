@@ -1,0 +1,2 @@
+validate "Was the file found?" "has_content 'file.txt' '7ff131af-48b6-4773-998d-1b82469990f0.log'"
+validate "Were files with double-digit found?" "is_hash 'double_digit.txt' '12df481ce6c95e1b6535870af35b86aa'"

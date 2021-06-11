@@ -1,0 +1,1 @@
+validate "Is 'eat.txt' correct?" "is_hash 'eat.txt' '15511c2fe6c61b74ec46bf2ce3169965'"

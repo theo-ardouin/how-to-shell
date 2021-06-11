@@ -1,0 +1,1 @@
+validate "What's the file's number of lines" "has_content 'cloc.txt' '55'"

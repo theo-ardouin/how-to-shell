@@ -1,0 +1,1 @@
+validate "Is 'error.txt' valid?" "is_hash 'error.txt' '7b8116cd89ab45e04256582e18c639d7'"
